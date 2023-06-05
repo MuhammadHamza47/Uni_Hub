@@ -1,8 +1,10 @@
 package com.hamza.unihub;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.os.Bundle;
 
@@ -47,7 +49,13 @@ public class MainActivity extends AppCompatActivity {
 
         UniAdapter adapter = new UniAdapter(arrayList, this);
         recyclerView.setAdapter(adapter);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
+//        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+//        recyclerView.setLayoutManager(layoutManager);
+
+//        StaggeredGridLayoutManager staggered = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+//        recyclerView.setLayoutManager(staggered);
+
+        GridLayoutManager grid = new GridLayoutManager(this, 2);
+        recyclerView.setLayoutManager(grid);
     }
 }
